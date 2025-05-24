@@ -1,19 +1,18 @@
-import React from "react";
+import SectionHeader from "./SectionHeader";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "./ContactMe.css";
 
 const ContactMe = () => {
   return (
     <>
     <section id="contactMe" className="profile-header">
-      <div className="about-heading">
-        <h4 className="section-subtitle">Get in touch</h4>
-        <h2 className="section-title">Contact Me</h2>
-      </div>
+
+      <SectionHeader subtitle="Get in touch" title="Contact Me" />
 
       <div className="contact-me">
         <div className="contactme-container">
           <div className="contactme-text">
-            <img
+            <LazyLoadImage
               width="25"
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"
@@ -21,7 +20,7 @@ const ContactMe = () => {
             <a href="mailto:sanjaykumarvg26@gmail.com">sanjaykumarvg26@gmail.com</a>
           </div>
           <div className="contactme-text">
-            <img
+            <LazyLoadImage
               width="25"
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"

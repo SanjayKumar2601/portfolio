@@ -1,29 +1,11 @@
-import React from "react";
+import SectionHeader from "./SectionHeader";
 import "./Experience.css";
-
-const experienceData = {
-  Backend: [
-    { lang: "Java", exp: "Experienced" },
-    { lang: "Spring Boot", exp: "Experienced" },
-    { lang: "Microservices", exp: "Intermediate" },
-    { lang: "JavaScript", exp: "Intermediate" },
-    { lang: "AWS", exp: "Basic" },
-    { lang: "GCP", exp: "Intermediate" },
-    { lang: "Jenkins", exp: "Basic" },
-  ],
-  Frontend: [
-    { lang: "React Js", exp: "Basic" },
-    { lang: "HTML/CSS", exp: "Intermediate" },
-  ],
-};
+import { experienceData } from "../data/experience.js";
 
 const Experience = () => {
   return (
     <section id="experience" className="experience-section">
-      <div className="about-heading">
-        <h4 className="section-subtitle">Explore My</h4>
-        <h2 className="section-title">Experience</h2>
-      </div>
+      <SectionHeader subtitle="Explore My" title="Experience" />
 
       <div className="exp-containers">
         {Object.entries(experienceData).map(([section, items]) => (

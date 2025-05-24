@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    padding: 1rem 13rem;
+    /* TODO: Add hue with primary color */
+    background-color: #fff; 
+    padding: 2px 13rem;
 }
 
 .nav-logo {
