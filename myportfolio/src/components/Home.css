@@ -28,16 +28,18 @@
 }
 
 .greeting {
-    font-size: 1.5rem;
+    font-size: 25x;
 }
 
 .name {
     font-size: 2.5rem;
     margin: 0.5rem 0;
+    font-weight: bold;
 }
 
 .role {
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .button-container {
@@ -46,12 +48,18 @@
     gap: 1rem;
 }
 
-.btn {
+.btn, .btn2 {
     padding: 15px;
-    border: 1px solid #333;
-    border-radius: 20px;
+    border: 2px solid #333;
+    border-radius: 55px;
     color: #333;
     text-decoration: none;
+    background-color: transparent;
+}
+
+.btn2 {
+    background-color: #333;
+    color: white;
 }
 
 .social-icons {
