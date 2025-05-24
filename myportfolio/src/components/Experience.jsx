@@ -1,6 +1,22 @@
 import React from "react";
 import "./Experience.css";
 
+const experienceData = {
+  Backend: [
+    { lang: "Java", exp: "Experienced" },
+    { lang: "Spring Boot", exp: "Experienced" },
+    { lang: "Microservices", exp: "Intermediate" },
+    { lang: "JavaScript", exp: "Intermediate" },
+    { lang: "AWS", exp: "Basic" },
+    { lang: "GCP", exp: "Intermediate" },
+    { lang: "Jenkins", exp: "Basic" },
+  ],
+  Frontend: [
+    { lang: "React Js", exp: "Basic" },
+    { lang: "HTML/CSS", exp: "Intermediate" },
+  ],
+};
+
 const Experience = () => {
   return (
     <section id="experience" className="experience-section">
@@ -10,56 +26,21 @@ const Experience = () => {
       </div>
 
       <div className="exp-containers">
-        <div className="exp-container">
-          <h2 className="section-title">Backend</h2>
-          <div className="exp-list-wrapper">
-            <ul>
-              <li>
-                <span className="lang">Java</span>
-                <span className="exp">Experienced</span>
-              </li>
-              <li>
-                <span className="lang">Spring Boot</span>
-                <span className="exp">Experienced</span>
-              </li>
-              <li>
-                <span className="lang">Microservices</span>
-                <span className="exp">Intermediate</span>
-              </li>
-              <li>
-                <span className="lang">JavaScript</span>
-                <span className="exp">Intermediate</span>
-              </li>
-              <li>
-                <span className="lang">AWS</span>
-                <span className="exp">Basic</span>
-              </li>
-              <li>
-                <span className="lang">GCP</span>
-                <span className="exp">Intermediate</span>
-              </li>
-              <li>
-                <span className="lang">Jenkins</span>
-                <span className="exp">Basic</span>
-              </li>
-            </ul>
+        {Object.entries(experienceData).map(([section, items]) => (
+          <div className="exp-container" key={section}>
+            <h2 className="section-title">{section}</h2>
+            <div className="exp-list-wrapper">
+              <ul>
+                {items.map((item, idx) => (
+                  <li key={item.lang + idx}>
+                    <span className="lang">{item.lang}</span>
+                    <span className="exp">{item.exp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="exp-container">
-          <h2 className="section-title">Frontend</h2>
-          <div className="exp-list-wrapper">
-            <ul>
-              <li>
-                <span className="lang">React Js</span>
-                <span className="exp">Basic</span>
-              </li>
-              <li>
-                <span className="lang">HTML/CSS</span>
-                <span className="exp">Intermediate</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

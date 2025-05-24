@@ -3,59 +3,51 @@ import "./Projects.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+const projects = [
+  {
+    title: "Sky Scanner",
+    img: "/sky_scanner_thumb.jpg",
+    description:
+      "Wanna book a flight? Sky Scanner is the best place to find affordable flights. Search for flights, compare prices, and book.",
+    repo: "#",
+  },
+  {
+    title: "Portfolio",
+    img: "/portfolio_thumb.jpg",
+    description:
+      "A web page by Full stack developer to showcase his skills and projects. This portfolio is built using React and Bootstrap.",
+    repo: "#",
+  },
+  {
+    title: "SonarQube Dashboard",
+    img: "/sonarqube_thumb.jpg",
+    description:
+      "A customized dashboard to monitor the code quality of your projects using SonarQube. It provides insights into code coverage, bugs, and vulnerabilities.",
+    repo: "#",
+  },
+];
+
 const Projects = () => {
   return (
-    <section id="about" className="projects-section">
+    <section id="projects" className="projects-section">
       <div className="about-heading">
         <h4 className="section-subtitle">Browse My recent</h4>
         <h2 className="section-title">Projects</h2>
       </div>
 
       <div className="projects-cards">
-        <Card className="card">
-          <Card.Img
-            variant="top"
-            src="/sky_scanner_thumb.jpg"
-          />
-          <Card.Body>
-            <Card.Title>Sky Scanner</Card.Title>
-            <Card.Text>
-              Wanna book a flight? Sky Scanner is the best place to find
-              affordable flights. Search for flights, compare prices, and book.
-            </Card.Text>
-            <Button variant="primary">Git Repo</Button>
-          </Card.Body>
-        </Card>
-
-        <Card className="card">
-          <Card.Img
-            variant="top"
-            src="/portfolio_thumb.jpg"
-          />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-
-        <Card className="card">
-          <Card.Img
-            variant="top"
-            src="/sonarqube_thumb.jpg"
-          />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
+        {projects.map((project, idx) => (
+          <Card className="card" key={idx}>
+            <Card.Img variant="top" src={project.img} />
+            <Card.Body>
+              <Card.Title>{project.title}</Card.Title>
+              <Card.Text>{project.description}</Card.Text>
+              <Button variant="primary" href={project.repo} target="_blank">
+                Git Repo
+              </Button>
+            </Card.Body>
+          </Card>
+        ))}
       </div>
     </section>
   );
