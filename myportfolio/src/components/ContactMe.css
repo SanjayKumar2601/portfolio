@@ -1,0 +1,60 @@
+.profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    padding: 2rem;
+}
+
+#contactMe {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactme-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contactme-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    padding: 5px;
+}
+
+.contactme-text img{
+    padding: 10px;
+}
+
+.contactme-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: small;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(203, 200, 200);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding: 1rem;
+}
+
+.footer p {
+    color: grey;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
