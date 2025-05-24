@@ -18,7 +18,7 @@ const ContactMe = () => {
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"
             />
-            <a href="sanjaykumarvg26@gmail.com">sanjaykumarvg26@gmail.com</a>
+            <a href="mailto:sanjaykumarvg26@gmail.com">sanjaykumarvg26@gmail.com</a>
           </div>
           <div className="contactme-text">
             <img
@@ -26,7 +26,7 @@ const ContactMe = () => {
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"
             />
-            <a href="www.linkedin.com/in/sanjay-kumar-90966b1b1">LinkedIn profile</a>
+            <a href="https://www.linkedin.com/in/sanjay-kumar-90966b1b1">LinkedIn profile</a>
           </div>
         </div>
       </div>

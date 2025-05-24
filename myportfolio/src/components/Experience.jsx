@@ -24,11 +24,11 @@ const Experience = () => {
               </li>
               <li>
                 <span className="lang">Microservices</span>
-                <span className="exp">Intermidiate</span>
+                <span className="exp">Intermediate</span>
               </li>
               <li>
                 <span className="lang">JavaScript</span>
-                <span className="exp">Intermidiate</span>
+                <span className="exp">Intermediate</span>
               </li>
               <li>
                 <span className="lang">AWS</span>
@@ -36,7 +36,7 @@ const Experience = () => {
               </li>
               <li>
                 <span className="lang">GCP</span>
-                <span className="exp">Intermidiate</span>
+                <span className="exp">Intermediate</span>
               </li>
               <li>
                 <span className="lang">Jenkins</span>
@@ -55,7 +55,7 @@ const Experience = () => {
               </li>
               <li>
                 <span className="lang">HTML/CSS</span>
-                <span className="exp">Intermidiate</span>
+                <span className="exp">Intermediate</span>
               </li>
             </ul>
           </div>

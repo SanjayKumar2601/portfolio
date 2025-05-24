@@ -26,7 +26,7 @@ const AboutMe = () => {
                     
                     <div className="about-container">
                         <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/25/education.png" />
-                        <p><span className="container-header">Education</span><br></br><span className="container-subheader">B.E Electoronics and Communitcation</span></p>
+                        <p><span className="container-header">Education</span><br></br><span className="container-subheader">B.E Electronics and Communication</span></p>
                     </div>
                 </div>
                 
