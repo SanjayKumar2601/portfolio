@@ -15,7 +15,7 @@ const Experience = () => {
               <ul>
                 {items.map((item, idx) => (
                   <li key={item.lang + idx}>
-                    <span className="lang">{item.lang}</span>
+                    <span className={`lang ${item.exp === 'Experienced' ? 'experienced' : ''}`}>{item.lang}</span>
                     <span className="exp">{item.exp}</span>
                   </li>
                 ))}

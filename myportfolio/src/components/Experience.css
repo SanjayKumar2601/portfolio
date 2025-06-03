@@ -50,6 +50,11 @@
     font-weight: bolder;
 }
 
+.lang.experienced {
+  color: var(--primary);
+  font-weight: bold;
+}
+
 .exp {
     font-weight: 100;
     margin: 0px 0px 10px 0px;
