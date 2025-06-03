@@ -5,41 +5,48 @@ import './Home.css';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleDownload = async () => {
     setIsLoading(true);
+    setError(null);
     try {
-      const response = await fetch('/test.pdf');
-      if (!response.ok) {
-        throw new Error('Resume file not found. Please try again later.');
-      }
-
+      const response = await fetch(`${process.env.PUBLIC_URL}/test.pdf`);
+      if (!response.ok) throw new Error('Resume file not found.');
       const blob = await response.blob();
-      if (blob.type !== 'application/pdf') {
-        throw new Error('Invalid file type. Expected a PDF / file not found.');
-      }
-
+      if (blob.type !== 'application/pdf') throw new Error('Invalid file type.');
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = 'Sanjay_Kumar_Resume.pdf';
-      document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
+      window.clicky.log('/download-cv', 'Download CV');
     } catch (error) {
       console.error('Download error:', error);
-      alert('Error: ' + error.message);
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleContactClick = () => {
+    document.getElementById('contactMe').scrollIntoView({ behavior: 'smooth' });
+    window.clicky.log('/contact-info-click', 'Contact Info Click');
+  };
+
+  const handleLinkedInClick = () => {
+    window.clicky.log('/linkedin-click', 'LinkedIn Click');
+  };
+
+  const handleGitHubClick = () => {
+    window.clicky.log('/github-click', 'GitHub Click');
+  };
+
   return (
     <section id="home" className="profile-header">
       <div className="profile-container">
-        <LazyLoadImage src="/mypic.jpeg" alt="Profile" className="profile-image" />
-
+        <LazyLoadImage src={`${process.env.PUBLIC_URL}/mypic.jpeg`} alt="Profile" className="profile-image" />
         <div className="profile-content">
           <p>
             <span className="greeting">Hello, I'm</span>
@@ -48,7 +55,6 @@ const Home = () => {
             <br />
             <span className="role">Software Developer</span>
           </p>
-
           <div className="button-container">
             <Button
               className="btn"
@@ -58,16 +64,21 @@ const Home = () => {
             >
               {isLoading ? 'Downloading...' : 'Download CV'}
             </Button>
+            {error && <p className="error-message">{error}</p>}
             <button
               className="btn2"
-              onClick={() => document.getElementById('contactMe').scrollIntoView({ behavior: 'smooth' })}
+              onClick={handleContactClick}
             >
               Contact Info
             </button>
           </div>
-
           <div className="social-icons">
-            <a href="https://www.linkedin.com/in/sanjay-kumar-90966b1b1" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/sanjay-kumar-90966b1b1"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleLinkedInClick}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -79,7 +90,12 @@ const Home = () => {
                 <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
               </svg>
             </a>
-            <a href="https://github.com/SanjayKumar2601" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/SanjayKumar2601"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleGitHubClick}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
