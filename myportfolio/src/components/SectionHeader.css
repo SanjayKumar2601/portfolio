@@ -1,0 +1,17 @@
+.about-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FF8C00;
+  margin-bottom: 2rem;
+}
