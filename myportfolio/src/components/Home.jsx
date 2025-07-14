@@ -72,8 +72,6 @@ const Home = () => {
             >
               Contact Info
             </button>
-              Contact Info
-            </button>
           </div>
           <div className="social-icons">
             <a
