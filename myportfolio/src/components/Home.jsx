@@ -21,7 +21,7 @@ const Home = () => {
       link.download = 'Sanjay_Kumar_Resume.pdf';
       link.click();
       window.URL.revokeObjectURL(url);
-      window.clicky.log('/download-cv', 'Download CV');
+      window.clicky?.log('/download-cv', 'Download CV');
     } catch (error) {
       console.error('Download error:', error);
       setError(error.message);
@@ -31,16 +31,16 @@ const Home = () => {
   };
 
   const handleContactClick = () => {
-    document.getElementById('contactMe').scrollIntoView({ behavior: 'smooth' });
-    window.clicky.log('/contact-info-click', 'Contact Info Click');
+    document.getElementById('contactMe')?.scrollIntoView({ behavior: 'smooth' });
+    window.clicky?.log('/contact-info-click', 'Contact Info Click');
   };
 
   const handleLinkedInClick = () => {
-    window.clicky.log('/linkedin-click', 'LinkedIn Click');
+    window.clicky?.log('/linkedin-click', 'LinkedIn Click');
   };
 
   const handleGitHubClick = () => {
-    window.clicky.log('/github-click', 'GitHub Click');
+    window.clicky?.log('/github-click', 'GitHub Click');
   };
 
   return (
@@ -66,9 +66,12 @@ const Home = () => {
             </Button>
             {error && <p className="error-message">{error}</p>}
             <button
+              type="button"
               className="btn2"
               onClick={handleContactClick}
             >
+              Contact Info
+            </button>
               Contact Info
             </button>
           </div>

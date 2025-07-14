@@ -11,7 +11,7 @@ const Projects = () => {
 
       <div className="projects-cards">
         {projects.map((project, idx) => (
-          <Card className="card" key={idx}>
+        <Card className="card" key={project.title}>
             <Card.Img variant="top" src={project.img} />
             <Card.Body>
               <Card.Title>{project.title}</Card.Title>

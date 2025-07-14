@@ -16,6 +16,7 @@ const ContactMe = () => {
               width="25"
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"
+              alt="email"
             />
             <a href="mailto:sanjaykumarvg26@gmail.com">sanjaykumarvg26@gmail.com</a>
           </div>
@@ -24,6 +25,7 @@ const ContactMe = () => {
               width="25"
               height="25"
               src="https://img.icons8.com/fluency-systems-filled/25/education.png"
+              alt="contact-me"
             />
             <a href="https://www.linkedin.com/in/sanjay-kumar-90966b1b1">LinkedIn profile</a>
           </div>

@@ -14,7 +14,7 @@ const Experience = () => {
             <div className="exp-list-wrapper">
               <ul>
                 {items.map((item, idx) => (
-                  <li key={item.lang + idx}>
+                  <li key={section + item.lang}>
                     <span className={`lang ${item.exp === 'Experienced' ? 'experienced' : ''}`}>{item.lang}</span>
                     <span className="exp">{item.exp}</span>
                   </li>
